@@ -48,6 +48,16 @@ app.on("window-all-closed", function () {
 
 function clearTempFiles() {
   const directory = "temp";
+  // make sure temp exists
+  try {
+    if (!fs.existsSync(directory)) {
+      console.log("Directory does not exist.");
+      fs.mkdirSync(directory);
+    }
+  } catch (e) {
+    console.log("An error occurred.");
+  }
+
   fs.readdir(directory, (err, files) => {
     if (err) throw err;
 

@@ -116,4 +116,4 @@ dist
 .pnp.*
 
 # remove temp files
-temp/*
+temp/*.*
